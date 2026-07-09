@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Design tokens ─── */
+:root {
+  color-scheme: light;
+  --bg: #fbfbfa;
+  --fg: #171a18;
+}
+
+/* ─── Reset & base ─── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: Geist, "SF Pro Display", "SF Pro Text", Aptos, "Segoe UI",
+    system-ui, sans-serif;
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* ─── Text selection ─── */
+::selection {
+  background: #f4e4bd;
+  color: #171a18;
+}
+
+/* ─── Scrollbar (WebKit) ─── */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(23, 26, 24, 0.15);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(23, 26, 24, 0.28);
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(251, 251, 250, 0.15);
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(251, 251, 250, 0.28);
+}
+
+/* ─── Dark mode scheme ─── */
+.dark {
+  color-scheme: dark;
+}
+
+/* ─── Subtle dot-grain overlay ─── */
+.noise-layer {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.016;
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    currentColor 1px,
+    transparent 0
+  );
+  background-size: 18px 18px;
+}
+
+/* ─── Grid line surface ─── */
+.surface-grid {
+  background-image: linear-gradient(
+      to right,
+      rgba(23, 26, 24, 0.042) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(23, 26, 24, 0.042) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+.dark .surface-grid {
+  background-image: linear-gradient(
+      to right,
+      rgba(251, 251, 250, 0.052) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(251, 251, 250, 0.052) 1px,
+      transparent 1px
+    );
+}
+
+/* ─── Mobile sidebar backdrop ─── */
+.sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 15;
+  background: rgba(14, 16, 15, 0.44);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  animation: fadeBackdrop 200ms ease both;
+}
+
+@keyframes fadeBackdrop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ─── Focus ring override for input group ─── */
+.field-group:focus-within {
+  outline: none;
+}
