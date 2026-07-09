@@ -187,14 +187,14 @@ export function PublicLanding() {
   const router = useRouter();
 
   return (
-    <main className="min-h-[100dvh] overflow-x-hidden bg-ink-50 text-ink-900">
+    <main className="min-h-[100dvh] overflow-x-hidden bg-[#faf9f7] text-ink-900 transition-colors duration-300">
       {/* Decorative layers */}
-      <div className="noise-layer text-ink-950" />
-      <div className="surface-grid fixed inset-0 opacity-60" />
+      <div className="noise-layer" />
+      <div className="surface-grid fixed inset-0 opacity-50" />
 
       <div className="relative z-10">
         {/* ── Nav ─────────────────────────────────────────────────── */}
-        <header className="sticky top-0 z-20 border-b border-ink-200/60 bg-ink-50/90 backdrop-blur-xl">
+        <header className="sticky top-0 z-20 border-b border-ink-200/60 bg-[#faf9f7]/92 backdrop-blur-xl transition-colors duration-300">
           <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3.5 sm:px-6 lg:px-8">
             {/* Logo */}
             <button
@@ -235,16 +235,18 @@ export function PublicLanding() {
         </header>
 
         {/* ── Hero ────────────────────────────────────────────────── */}
-        <section className="mx-auto grid max-w-7xl gap-10 px-4 pb-20 pt-14 sm:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-start lg:px-8 lg:pb-28 lg:pt-20 xl:gap-14">
+        <section className="mx-auto grid max-w-7xl gap-10 px-4 pb-20 pt-16 sm:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-start lg:px-8 lg:pb-28 lg:pt-24 xl:gap-16">
           {/* Copy */}
           <div className="flex flex-col justify-center">
             <Badge tone="yellow" className="w-max">
               Dành cho trường đại học &amp; L&amp;D doanh nghiệp
             </Badge>
 
-            <h1 className="mt-5 text-[2.4rem] font-bold leading-[1.08] tracking-tight text-ink-900 sm:text-5xl lg:text-[3.25rem]">
+
+            <h1 className="gradient-text mt-5 text-[2.35rem] font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.2rem]">
               Mô phỏng doanh nghiệp bằng AI Agent cho lớp học hiện đại.
             </h1>
+
 
             <p className="mt-5 max-w-xl text-base leading-7 text-ink-700/72 sm:text-lg sm:leading-8">
               Lumora biến bài tập quản trị thành một workspace công sở thật —
